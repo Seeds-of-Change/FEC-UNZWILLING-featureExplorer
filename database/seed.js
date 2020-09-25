@@ -1,5 +1,5 @@
 var faker = require('faker');
-var db = require('./index.js');
+var database = require('./index.js');
 
 //faker added functionality
 faker.random.array = function randomArray(schema, min = 1, max){
@@ -24,9 +24,9 @@ var featureSchema = {
 
 
 //generate seed data
-var seedDB = function(){
+var seedDB = function(callback){
   var products = [];
-  console.log('seed func is running');
+  console.log('seeding started');
   for (var i = 1; i <= 100; i++) {
     const test = {
       id: i,
@@ -41,7 +41,12 @@ var seedDB = function(){
     products.push(test);
 
   }
-  db.save(products);
+  database.save(products)
+    .then(() =>{
+      console.log('seed complete');
+      database.db.close();
+    });
+
 };
 
 seedDB();

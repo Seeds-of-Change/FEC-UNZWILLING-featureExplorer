@@ -51,5 +51,6 @@ let fetch = () => {
 
 module.exports = {
   save,
-  fetch
+  fetch,
+  db
 };
