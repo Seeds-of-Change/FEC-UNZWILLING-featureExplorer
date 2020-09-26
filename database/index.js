@@ -11,13 +11,27 @@ db.once('open', function() {
   console.log("🎊 Mongoose is connected to server 🎊")
 });
 
+let featureSchema = mongoose.Schema({
+  heading: String,
+  description: String,
+  posX: Number,
+  posY: Number
+});
+
 let productSchema = mongoose.Schema({
   id: Number,
   name: String,
-  features: {header: String, features: Array},
+  product_features:
+    { header: String,
+      features: [featureSchema]
+    },
   related_products: Array,
-  image: String
+  image: String,
+  image_mini: String,
+  price: Number,
+  rating: Number
 });
+
 
 let Product = mongoose.model('Product', productSchema);
 

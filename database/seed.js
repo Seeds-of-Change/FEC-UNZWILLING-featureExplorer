@@ -6,39 +6,44 @@ faker.random.array = function randomArray(schema, min = 1, max){
   max = max || min
 
   if(schema === 'number') {
-    return Array.from({ length: faker.random.number({min, max})}).map(() => {
-      return faker.random.number({'min':1, 'max': 100 });
+    return Array.from({length: faker.random.number({min, max})}).map(() => {
+      return faker.random.number({min: 1, max: 100 });
     })
   }
 
-  return Array.from({ length: faker.random.number({ min, max }) }).map(() => Object.keys(schema).reduce((entity, key) => {
-    entity[key] = faker.fake(schema[key])
-    return entity
-  }, {}))
+  if(schema === 'features'){
+    return Array.from({length: faker.random.number({ min, max })}).map(() => {
+      return {
+        heading: faker.commerce.productAdjective(),
+        description: faker.lorem.paragraph(),
+        posX: faker.random.number({min: 0, max: 100}),
+        posY: faker.random.number({min: 0, max: 100})
+      };
+    })
+  }
 };
-
-var featureSchema = {
-  heading: faker.commerce.productAdjective(),
-  description: faker.lorem.paragraph()
-};
-
 
 //generate seed data
 var seedDB = function(callback){
   var products = [];
   console.log('seeding started');
-  for (var i = 1; i <= 100; i++) {
-    const test = {
+  for (var i = 1; i <= 3; i++) {
+    const product = {
       id: i,
       name: faker.commerce.productName(),
-      features: {
+      feature_header: faker.lorem.sentence(),
+      product_features: {
         header: faker.lorem.sentence(),
-        features: faker.random.array(featureSchema, 3, 7)
+        features: faker.random.array('features', 3, 7)
       },
       related_products: faker.random.array('number', 4, 10),
-      image: `${i}.jpg`
+      image: `${i}.jpg`,
+      image_mini: `${i}_mini.jpg`,
+      price: faker.random.number({min: 5, max: 200, precision: 0.01}),
+      rating: faker.random.number({min: 1, max: 5, precision: 0.01})
     };
-    products.push(test);
+
+    products.push(product);
 
   }
   database.save(products)
