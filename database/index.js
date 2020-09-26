@@ -42,11 +42,12 @@ let save = (products) => {
 
   return Promise.all(savePromises);
 
-}
+};
 
-let fetch = () => {
-  return Product.find().sort('id').limit(25);
-}
+let fetch = id => {
+  return Product.findOne({id});
+};
+
 
 
 module.exports = {
