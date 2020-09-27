@@ -1,32 +1,26 @@
 const express = require('express');
-const app = express();
-const path = require('path');
+// const path = require('path');
 const bodyParser = require('body-parser');
 const db = require('../database');
 
+const app = express();
 const port = 3000;
 
-app.listen(port, function() {
+app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
 app.get('/products/:id', (req, res) => {
-  var id = req.params.id;
+  const { id } = req.params;
   db.fetch(id)
-    .then( product => {
-      if(!product) {
+    .then((product) => {
+      if (!product) {
         res.status(400).send(`error finding product with id: ${id}`);
       }
       res.status(200).send(product);
-    })
-
+    });
 });
 
-app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(`${__dirname}/../client/dist`));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
-
-
-
-
-
+app.use(bodyParser.urlencoded({ extended: true }));
