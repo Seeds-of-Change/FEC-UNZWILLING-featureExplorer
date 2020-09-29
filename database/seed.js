@@ -28,7 +28,6 @@ const seedDB = () => {
     const product = {
       id: i,
       name: faker.commerce.productName(),
-      feature_header: faker.lorem.sentence(),
       product_features: {
         header: faker.lorem.sentence(),
         features: faker.random.array('features', 3, 7),

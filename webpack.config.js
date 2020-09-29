@@ -19,13 +19,13 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, '/client/dist'),
-    port: 8888,
+    port: 8080,
     // Send API requests on localhost to API server get around CORS.
     proxy: {
-      '/products': {
-        target: 'http://localhost:3000/products'
-      }
-    }
+      '/': {
+        target: 'http://localhost:3000/',
+      },
+    },
   },
   resolve: {
     extensions: ['.js', '.jsx'],
