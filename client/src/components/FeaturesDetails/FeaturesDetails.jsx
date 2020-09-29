@@ -52,6 +52,8 @@ FeaturesDetails.propTypes = {
     PropTypes.shape({
       heading: PropTypes.string,
       description: PropTypes.string,
+      posX: PropTypes.number,
+      posY: PropTypes.number,
     }),
   ),
   header: PropTypes.string,

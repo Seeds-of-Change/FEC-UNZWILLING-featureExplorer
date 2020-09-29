@@ -3,6 +3,7 @@ import axios from 'axios';
 // import PropTypes from 'prop-types';
 import style from './styles.css';
 import FeaturesDetails from './FeaturesDetails/FeaturesDetails';
+import ImageViewer from './ImageViewer/ImageViewer';
 
 class App extends React.Component {
   constructor(props) {
@@ -45,7 +46,17 @@ class App extends React.Component {
     const { features, header, activeIndex } = this.state;
     return (
       <div className={style.App}>
-        <FeaturesDetails features={features} header={header} activeIndex={activeIndex} updateActive={this.updateActive} />
+        <ImageViewer
+          features={features}
+          activeIndex={activeIndex}
+          updateActive={this.updateActive}
+        />
+        <FeaturesDetails
+          features={features}
+          header={header}
+          activeIndex={activeIndex}
+          updateActive={this.updateActive}
+        />
 
       </div>
     );
