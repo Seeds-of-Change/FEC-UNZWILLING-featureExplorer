@@ -22,12 +22,17 @@
   margin-bottom: 50px;
 }
 
-.feature_heading{
+.feature_heading, .feature_heading:focus{
   color: rgb(153, 150, 147);
   font-size: 1.5rem;
   line-height: 36px;
-  margin: 0;
   cursor: pointer;
+  border: none;
+  background: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  outline: none;
 }
 
 .feature_description{

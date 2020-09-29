@@ -5,7 +5,6 @@ import style from './styles.css';
 export default class FeaturesDetails extends React.Component {
   constructor(props) {
     super(props);
-    const { features } = this.props;
     this.state = {
       activeIndex: 0,
     };
@@ -13,6 +12,7 @@ export default class FeaturesDetails extends React.Component {
   }
 
   handleFeatureChange(e) {
+    e.preventDefault();
     // const { features } = this.props;
     const newActiveIndex = Number(e.target.parentNode.attributes.index.value);
 
@@ -28,10 +28,10 @@ export default class FeaturesDetails extends React.Component {
         <h3 className={style.header}>{header}</h3>
         <ul className={style.features}>
           {features.map((feature, index) => (
-            <li className={this.state.activeIndex === index ? `${style.feature} ${style.active}` : `${style.feature}`} key={`${feature.posX}${feature.posY}`} index={index}>
-              <h4 className={style.feature_heading} onClick={this.handleFeatureChange}>
+            <li className={activeIndex === index ? `${style.feature} ${style.active}` : `${style.feature}`} key={`${feature.posX}${feature.posY}`} index={index}>
+              <button type="button" className={style.feature_heading} onClick={this.handleFeatureChange}>
                 {feature.heading}
-              </h4>
+              </button>
               <div className={style.feature_description}>
                 {feature.description}
               </div>
