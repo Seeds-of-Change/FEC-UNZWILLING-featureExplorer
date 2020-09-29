@@ -7,16 +7,17 @@ export default class FeaturesDetails extends React.Component {
     super(props);
     const { features } = this.props;
     this.state = {
-      activeIndex: "0",
+      activeIndex: 0,
     };
     this.handleFeatureChange = this.handleFeatureChange.bind(this);
   }
 
   handleFeatureChange(e) {
     // const { features } = this.props;
-    const newActiveIndex = e.target.parentNode.attributes.index.value;
+    const newActiveIndex = Number(e.target.parentNode.attributes.index.value);
 
     this.setState({ activeIndex: newActiveIndex });
+    //update state in App as well
   }
 
   render() {
@@ -27,7 +28,7 @@ export default class FeaturesDetails extends React.Component {
         <h3 className={style.header}>{header}</h3>
         <ul className={style.features}>
           {features.map((feature, index) => (
-            <li className={this.state.activeIndex == index ? `${style.feature} ${style.active}` : `${style.feature}`} key={`${feature.posX}${feature.posY}`} index={index}>
+            <li className={this.state.activeIndex === index ? `${style.feature} ${style.active}` : `${style.feature}`} key={`${feature.posX}${feature.posY}`} index={index}>
               <h4 className={style.feature_heading} onClick={this.handleFeatureChange}>
                 {feature.heading}
               </h4>
