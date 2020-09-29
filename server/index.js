@@ -1,10 +1,15 @@
 const express = require('express');
-// const path = require('path');
+const path = require('path');
 const bodyParser = require('body-parser');
 const db = require('../database');
 
 const app = express();
 const port = 3000;
+
+// app.use(express.static(`${__dirname}/../client/dist`));
+app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
@@ -21,6 +26,3 @@ app.get('/products/:id', (req, res) => {
     });
 });
 
-app.use(express.static(`${__dirname}/../client/dist`));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
