@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 // import PropTypes from 'prop-types';
-import FeaturesDetails from './FeaturesDetails';
+import style from './styles.css';
+import FeaturesDetails from './FeaturesDetails/FeaturesDetails';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class App extends React.Component {
     this.state = {
       header: '',
       features: [],
+      activeIndex: 0,
 
     };
     this.getFeatures = this.getFeatures.bind(this);
@@ -28,14 +30,14 @@ class App extends React.Component {
         });
       })
       .catch((error) => {
-        console.log('ERROR: ', error);
+        // console.log('ERROR: ', error);
       });
   }
 
   render() {
     const { features, header } = this.state;
     return (
-      <div className="App">
+      <div className={style.App}>
         <FeaturesDetails features={features} header={header} />
 
       </div>
