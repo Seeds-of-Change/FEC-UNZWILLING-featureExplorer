@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import App from '../client/src/components/App';
-import FeaturesDetails from '../client/src/components/FeaturesDetails';
+import FeaturesDetails from '../client/src/components/FeaturesDetails/FeaturesDetails';
 
 describe('App', () => {
   test('snapshot renders', () => {

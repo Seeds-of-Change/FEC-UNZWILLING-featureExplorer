@@ -4,14 +4,46 @@ exports[`FeaturesDetails snapshot renders 1`] = `
 <div
   className="FeaturesDetails"
 >
+  <h3
+    className="FeaturesDetails-header"
+  >
+    THIS IS THE HEADER
+  </h3>
   <div>
-    1
+    <h4
+      className="FeaturesDetails-feature-heading"
+    >
+      heading for 1
+    </h4>
+    <div
+      className="FeaturesDetails-feature-description"
+    >
+      description string for feature 1
+    </div>
   </div>
   <div>
-    2
+    <h4
+      className="FeaturesDetails-feature-heading"
+    >
+      heading for 2
+    </h4>
+    <div
+      className="FeaturesDetails-feature-description"
+    >
+      description string for feature 2
+    </div>
   </div>
   <div>
-    3
+    <h4
+      className="FeaturesDetails-feature-heading"
+    >
+      heading for 3
+    </h4>
+    <div
+      className="FeaturesDetails-feature-description"
+    >
+      description string for feature 3
+    </div>
   </div>
 </div>
 `;

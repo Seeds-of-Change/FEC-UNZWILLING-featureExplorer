@@ -11,7 +11,7 @@ faker.random.array = function randomArray(schema, min = 1, max) {
   if (schema === 'features') {
     return Array.from({ length: faker.random.number({ min, max }) })
       .map(() => ({
-        heading: faker.commerce.productAdjective(),
+        heading: faker.lorem.sentence(),
         description: faker.lorem.paragraph(),
         posX: faker.random.number({ min: 0, max: 100 }),
         posY: faker.random.number({ min: 0, max: 100 }),
@@ -28,7 +28,6 @@ const seedDB = () => {
     const product = {
       id: i,
       name: faker.commerce.productName(),
-      feature_header: faker.lorem.sentence(),
       product_features: {
         header: faker.lorem.sentence(),
         features: faker.random.array('features', 3, 7),
