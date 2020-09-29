@@ -14,6 +14,7 @@ class App extends React.Component {
 
     };
     this.getFeatures = this.getFeatures.bind(this);
+    this.updateActive = this.updateActive.bind(this);
   }
 
   componentDidMount() {
@@ -34,11 +35,17 @@ class App extends React.Component {
       });
   }
 
+  updateActive(index) {
+    this.setState({
+      activeIndex: index,
+    });
+  }
+
   render() {
-    const { features, header } = this.state;
+    const { features, header, activeIndex } = this.state;
     return (
       <div className={style.App}>
-        <FeaturesDetails features={features} header={header} />
+        <FeaturesDetails features={features} header={header} activeIndex={activeIndex} updateActive={this.updateActive} />
 
       </div>
     );

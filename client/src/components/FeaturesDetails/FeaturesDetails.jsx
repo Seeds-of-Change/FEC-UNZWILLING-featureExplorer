@@ -5,24 +5,20 @@ import style from './styles.css';
 export default class FeaturesDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      activeIndex: 0,
-    };
     this.handleFeatureChange = this.handleFeatureChange.bind(this);
   }
 
   handleFeatureChange(e) {
     e.preventDefault();
-    // const { features } = this.props;
+    const { updateActive } = this.props;
     const newActiveIndex = Number(e.target.parentNode.attributes.index.value);
 
-    this.setState({ activeIndex: newActiveIndex });
-    //update state in App as well
+    updateActive(newActiveIndex);
   }
 
   render() {
-    const { header, features } = this.props;
-    const { activeIndex } = this.state;
+    const { header, features, activeIndex } = this.props;
+
     return (
       <div className={style.wrapper}>
         <h3 className={style.header}>{header}</h3>
@@ -47,6 +43,8 @@ export default class FeaturesDetails extends React.Component {
 FeaturesDetails.defaultProps = {
   header: null,
   features: null,
+  updateActive: null,
+  activeIndex: 0,
 };
 
 FeaturesDetails.propTypes = {
@@ -57,6 +55,8 @@ FeaturesDetails.propTypes = {
     }),
   ),
   header: PropTypes.string,
+  updateActive: PropTypes.func,
+  activeIndex: PropTypes.number,
 };
 
 // export default FeaturesDetails;
