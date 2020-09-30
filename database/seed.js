@@ -13,8 +13,8 @@ faker.random.array = function randomArray(schema, min = 1, max) {
       .map(() => ({
         heading: faker.lorem.sentence(),
         description: faker.lorem.paragraph(),
-        posX: faker.random.number({ min: 0, max: 100 }),
-        posY: faker.random.number({ min: 0, max: 100 }),
+        posX: faker.random.number({ min: 5, max: 95 }),
+        posY: faker.random.number({ min: 5, max: 95 }),
       }));
   }
   return null;
@@ -33,8 +33,8 @@ const seedDB = () => {
         features: faker.random.array('features', 3, 7),
       },
       related_products: faker.random.array('number', 4, 10),
-      image: `${i}.jpg`,
-      image_mini: `${i}_mini.jpg`,
+      image: `https://unzwilling.s3-us-west-1.amazonaws.com/${i}.jpg`,
+      image_mini: `https://unzwilling.s3-us-west-1.amazonaws.com/${i}_mini.jpg`,
       price: faker.random.number({ min: 5, max: 200, precision: 0.01 }),
       rating: faker.random.number({ min: 1, max: 5, precision: 0.01 }),
     };
