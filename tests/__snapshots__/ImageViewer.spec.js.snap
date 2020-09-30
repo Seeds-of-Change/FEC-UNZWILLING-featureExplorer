@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageViewer Have props snapshot renders 1`] = `
+<div
+  className="wrapper"
+>
+  <img
+    alt="main product"
+    className="image"
+    src="https://unzwilling.s3-us-west-1.amazonaws.com/1.jpg"
+  />
+  <button
+    className="button active"
+    index={0}
+    onClick={[Function]}
+    style={
+      Object {
+        "left": "60%",
+        "top": "62%",
+      }
+    }
+    type="button"
+  >
+    +
+  </button>
+  <button
+    className="button"
+    index={1}
+    onClick={[Function]}
+    style={
+      Object {
+        "left": "70%",
+        "top": "32%",
+      }
+    }
+    type="button"
+  >
+    +
+  </button>
+  <button
+    className="button"
+    index={2}
+    onClick={[Function]}
+    style={
+      Object {
+        "left": "20%",
+        "top": "83%",
+      }
+    }
+    type="button"
+  >
+    +
+  </button>
+</div>
+`;

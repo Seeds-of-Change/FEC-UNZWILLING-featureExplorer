@@ -57,7 +57,6 @@ class App extends React.Component {
           activeIndex={activeIndex}
           updateActive={this.updateActive}
         />
-
       </div>
     );
   }
