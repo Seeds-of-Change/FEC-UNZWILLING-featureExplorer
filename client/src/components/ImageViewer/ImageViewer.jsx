@@ -14,7 +14,7 @@ export default function ImageViewer(props) {
 
   return (
     <div className={style.wrapper}>
-      <img className={style.image} alt="main product" src="https://www.zwilling.com/on/demandware.static/-/Sites-zwilling-us-Library/default/dw13c7072b/images/product-content/product-specific-images/zwilling-enfinigy-hotspot-modules/electrics-pdp-hotspot-power-blender.jpg" />
+      <img className={style.image} alt="main product" src="https://unzwilling.s3-us-west-1.amazonaws.com/1.jpg" />
       {features.map((feature, index) => (
         <button
           className={activeIndex === index ? `${style.button} ${style.active}` : `${style.button}`}
