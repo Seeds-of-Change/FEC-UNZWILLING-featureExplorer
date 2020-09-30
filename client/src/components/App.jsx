@@ -9,9 +9,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      header: '',
+      header: undefined,
       features: [],
       activeIndex: 0,
+      productImage: undefined,
 
     };
     this.getFeatures = this.getFeatures.bind(this);
@@ -29,10 +30,11 @@ class App extends React.Component {
         this.setState({
           header: response.data.product_features.header,
           features: response.data.product_features.features,
+          productImage: response.data.image,
         });
       })
       .catch((error) => {
-        // console.log('ERROR: ', error);
+        console.log('ERROR: ', error);
       });
   }
 
@@ -43,13 +45,16 @@ class App extends React.Component {
   }
 
   render() {
-    const { features, header, activeIndex } = this.state;
+    const {
+      features, header, activeIndex, productImage,
+    } = this.state;
     return (
       <div className={style.App}>
         <ImageViewer
           features={features}
           activeIndex={activeIndex}
           updateActive={this.updateActive}
+          productImage={productImage}
         />
         <FeaturesDetails
           features={features}
