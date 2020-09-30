@@ -1,13 +1,13 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import FeaturesDetails from '../client/src/components/FeaturesDetails/FeaturesDetails';
+import ImageViewer from '../client/src/components/ImageViewer/ImageViewer';
 
-describe('FeaturesDetails', () => {
+describe('ImageViewer', () => {
   describe('Have props', () => {
     let component;
 
     beforeEach(() => {
-      const { features, header, activeIndex } = {
+      const { features, activeIndex } = {
         features: [{
           heading: 'heading for 1', description: 'description string for feature 1', posX: 60, posY: 62,
         }, {
@@ -15,13 +15,10 @@ describe('FeaturesDetails', () => {
         }, {
           heading: 'heading for 3', description: 'description string for feature 3', posX: 20, posY: 83,
         }],
-        header: 'THIS IS THE HEADER',
         activeIndex: 0,
       };
 
-      component = renderer.create(
-        <FeaturesDetails features={features} header={header} activeIndex={activeIndex} />,
-      );
+      component = renderer.create(<ImageViewer features={features} activeIndex={activeIndex} />);
     });
 
     test('snapshot renders', () => {

@@ -1,49 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeaturesDetails snapshot renders 1`] = `
+exports[`FeaturesDetails Have props snapshot renders 1`] = `
 <div
-  className="FeaturesDetails"
+  className="wrapper"
 >
   <h3
-    className="FeaturesDetails-header"
+    className="header"
   >
     THIS IS THE HEADER
   </h3>
-  <div>
-    <h4
-      className="FeaturesDetails-feature-heading"
+  <ul
+    className="features"
+  >
+    <li
+      className="feature active"
+      index={0}
     >
-      heading for 1
-    </h4>
-    <div
-      className="FeaturesDetails-feature-description"
+      <button
+        className="feature_heading"
+        onClick={[Function]}
+        type="button"
+      >
+        heading for 1
+      </button>
+      <div
+        className="feature_description"
+      >
+        description string for feature 1
+      </div>
+    </li>
+    <li
+      className="feature"
+      index={1}
     >
-      description string for feature 1
-    </div>
-  </div>
-  <div>
-    <h4
-      className="FeaturesDetails-feature-heading"
+      <button
+        className="feature_heading"
+        onClick={[Function]}
+        type="button"
+      >
+        heading for 2
+      </button>
+      <div
+        className="feature_description"
+      >
+        description string for feature 2
+      </div>
+    </li>
+    <li
+      className="feature"
+      index={2}
     >
-      heading for 2
-    </h4>
-    <div
-      className="FeaturesDetails-feature-description"
-    >
-      description string for feature 2
-    </div>
-  </div>
-  <div>
-    <h4
-      className="FeaturesDetails-feature-heading"
-    >
-      heading for 3
-    </h4>
-    <div
-      className="FeaturesDetails-feature-description"
-    >
-      description string for feature 3
-    </div>
-  </div>
+      <button
+        className="feature_heading"
+        onClick={[Function]}
+        type="button"
+      >
+        heading for 3
+      </button>
+      <div
+        className="feature_description"
+      >
+        description string for feature 3
+      </div>
+    </li>
+  </ul>
 </div>
 `;
