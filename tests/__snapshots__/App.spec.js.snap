@@ -5,13 +5,25 @@ exports[`App snapshot renders 1`] = `
   className="App"
 >
   <div
-    className="FeaturesDetails"
+    className="wrapper"
+  >
+    <img
+      alt="main product"
+      className="image"
+      src="https://unzwilling.s3-us-west-1.amazonaws.com/1.jpg"
+    />
+  </div>
+  <div
+    className="wrapper"
   >
     <h3
-      className="FeaturesDetails-header"
+      className="header"
     >
       
     </h3>
+    <ul
+      className="features"
+    />
   </div>
 </div>
 `;

@@ -1,4 +1,3 @@
-/tests/**
 /client/dist/**
 .babelrc
 jest.config.json
