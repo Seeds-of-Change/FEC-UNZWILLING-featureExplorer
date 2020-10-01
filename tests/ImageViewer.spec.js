@@ -7,7 +7,7 @@ describe('ImageViewer', () => {
     let component;
 
     beforeEach(() => {
-      const { features, activeIndex } = {
+      const { features, activeIndex, productImage } = {
         features: [{
           heading: 'heading for 1', description: 'description string for feature 1', posX: 60, posY: 62,
         }, {
@@ -16,9 +16,12 @@ describe('ImageViewer', () => {
           heading: 'heading for 3', description: 'description string for feature 3', posX: 20, posY: 83,
         }],
         activeIndex: 0,
+        productImage: 'https://unzwilling.s3-us-west-1.amazonaws.com/1.jpg',
       };
 
-      component = renderer.create(<ImageViewer features={features} activeIndex={activeIndex} />);
+      component = renderer.create(
+        <ImageViewer features={features} activeIndex={activeIndex} productImage={productImage} />,
+      );
     });
 
     test('snapshot renders', () => {
