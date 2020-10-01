@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import style from './styles.css';
 
 export default function ImageViewer(props) {
-  const { features, activeIndex, updateActive } = props;
+  const {
+    features, activeIndex, updateActive, productImage,
+  } = props;
 
   const handleFeatureChange = (e) => {
     e.preventDefault();
@@ -14,7 +16,7 @@ export default function ImageViewer(props) {
 
   return (
     <div className={style.wrapper}>
-      <img className={style.image} alt="main product" src="https://unzwilling.s3-us-west-1.amazonaws.com/1.jpg" />
+      <img className={style.image} alt="main product" src={productImage} />
       {features.map((feature, index) => (
         <button
           className={activeIndex === index ? `${style.button} ${style.active}` : `${style.button}`}
@@ -32,10 +34,10 @@ export default function ImageViewer(props) {
 }
 
 ImageViewer.defaultProps = {
-
   features: null,
   updateActive: null,
   activeIndex: 0,
+  productImage: undefined,
 };
 
 ImageViewer.propTypes = {
@@ -49,4 +51,5 @@ ImageViewer.propTypes = {
   ),
   updateActive: PropTypes.func,
   activeIndex: PropTypes.number,
+  productImage: PropTypes.string,
 };
