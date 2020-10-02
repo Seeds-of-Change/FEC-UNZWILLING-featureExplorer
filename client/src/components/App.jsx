@@ -1,11 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-// import PropTypes from 'prop-types';
 import style from './styles.css';
 import FeaturesDetails from './FeaturesDetails/FeaturesDetails';
 import ImageViewer from './ImageViewer/ImageViewer';
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +33,7 @@ class App extends React.Component {
         });
       })
       .catch((error) => {
-        console.log('ERROR: ', error);
+        console.log('ERROR: ');
       });
   }
 
@@ -66,5 +65,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
