@@ -23,7 +23,7 @@ export default class App extends React.Component {
   }
 
   getFeatures(id) {
-    axios.get(`http://localhost:8080/products/${id}`)
+    axios.get(`http://localhost:3000/products/${id}`)
       .then((response) => {
         console.log(response);
         this.setState({
@@ -48,7 +48,7 @@ export default class App extends React.Component {
       features, header, activeIndex, productImage,
     } = this.state;
     return (
-      <div className={style.App}>
+      <div className={style.featuresDetails}>
         <ImageViewer
           features={features}
           activeIndex={activeIndex}
