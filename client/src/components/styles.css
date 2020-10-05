@@ -1,8 +1,9 @@
-.App {
+.featuresDetails {
   display:block;
   font-family:Lato, sans-serif;
   margin: 0 auto;
   max-width:1350px;
   overflow:hidden;
   padding-top:20px;
+  background: white;
 }
