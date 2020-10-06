@@ -22,6 +22,10 @@ export default class App extends React.Component {
     this.getFeatures(1);
   }
 
+  getProduct(id) {
+    this.getFeatures(id);
+  }
+
   getFeatures(id) {
     axios.get(`http://localhost:3000/products/${id}`)
       .then((response) => {
