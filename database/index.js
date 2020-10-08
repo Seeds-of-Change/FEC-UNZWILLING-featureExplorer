@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/unZWILLING-featureExplorer', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect('mongodb://database/unZWILLING-featureExplorer', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
 const db = mongoose.connection;
 
