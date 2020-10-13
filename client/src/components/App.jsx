@@ -27,9 +27,8 @@ export default class App extends React.Component {
   }
 
   getFeatures(id) {
-    axios.get(`http://localhost:3000/products/${id}`)
+    axios.get(`/products/featureExplorer/${id}`)
       .then((response) => {
-        console.log(response);
         this.setState({
           header: response.data.product_features.header,
           features: response.data.product_features.features,

@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const db = require('../database');
 const cors = require('cors');
+const db = require('../database');
 
 const app = express();
 const port = 3000;
@@ -17,7 +17,7 @@ app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
-app.get('/products/:id', (req, res) => {
+app.get('/products/featureExplorer/:id', (req, res) => {
   const { id } = req.params;
   db.fetch(id)
     .then((product) => {
@@ -27,4 +27,3 @@ app.get('/products/:id', (req, res) => {
       res.status(200).send(product);
     });
 });
-
