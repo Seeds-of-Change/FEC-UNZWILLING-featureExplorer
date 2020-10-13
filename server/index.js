@@ -17,7 +17,7 @@ app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
-app.get('/products/:id', (req, res) => {
+app.get('/products/featureExplorer/:id', (req, res) => {
   const { id } = req.params;
   db.fetch(id)
     .then((product) => {

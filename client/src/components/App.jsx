@@ -27,7 +27,7 @@ export default class App extends React.Component {
   }
 
   getFeatures(id) {
-    axios.get(`/products/${id}`)
+    axios.get(`/products/featureExplorer/${id}`)
       .then((response) => {
         this.setState({
           header: response.data.product_features.header,
